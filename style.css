@@ -1,0 +1,484 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: 0;
+  border: 0;
+  outline: 0;
+  scroll-behavior: smooth;
+  font-family: poppins;
+}
+html {
+   font-size: 60%;
+   overflow-x: hidden;
+}
+:root {
+   --bg-color:#080808;
+   --second-bg-color:#001005;
+   --text-color:white;
+   --main-color:#00ff51;
+}
+body {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+}
+.header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	padding: 4rem 12%;
+	background-color: rgba(0, 0, 0, 0.3); 
+	backdrop-filter: blur(10px);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 100;
+}
+.logo:hover {
+	transform: scale(2.5);
+}
+span {
+	color: var(--main-color);
+}
+.navbar a {
+	font-size: 1.8rem;
+	color: var(--text-color);
+	margin-left: 4rem;
+	font-weight: 500;
+	border-bottom: 3px solid transparent;
+	transition: 0.3 ease;
+}
+.navbar a:hover {
+	border-bottom: 3px solid var(--main-color);
+	color: var(--main-color);
+}
+
+section{
+    min-height: 100vh;
+    padding: 10rem 12%;
+} 
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15rem;
+}      
+.home-content{
+    display: flex;
+    max-width: 1200px;
+    flex-direction: column ;
+    align-items: baseline;
+    text-align: left;
+    justify-content: center;
+}
+.home-content h1{
+    font-size: 5.5rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1;
+}
+.home-content h3{
+    font-size: 2.5rem;
+    margin: 1rem 0;
+}
+.home-content p{
+    font-size: 2rem;
+    font-size: 500;
+    line-height: 1.8;
+}
+.home-img img{
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25% var(--main-color);
+    transition: 0.4s ease-in-out;
+}
+.home-img img:hover  {
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color),
+                0 0 100px var(--main-color);
+}
+.icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    padding: 1rem;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 3rem 0.5rem;
+    transition: 0.3rem;
+}
+.icons a:hover{
+    color: var(--text-color);
+    background-color: var(--main-color);
+    transform: scale(1.2)translateY(-5px);
+    box-shadow: 0 0 25px var(--main-color);
+}
+.btn-group{
+    display: flex;
+    gap: 1.5rem;
+}
+.btn{
+    display: inline-block;
+    padding: 1rem 3rem;
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 3rem;
+    font-size: 1.8rem;
+    color: black;
+    border: 2px solid transparent;
+    font-weight: 600;
+    transition: 0.3rem ease-in-out;
+}
+.btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color);
+}
+.btn-group a:nth-of-type(2){
+    background-color: black;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    box-shadow: 0 0 25px transparent;
+}
+.btn-group a:nth-of-type(2):hover{
+    box-shadow: 0 0 25px var(--main-color);
+    background-color: var(--main-color);
+    color: black;
+}
+.text-animation{
+    font-size: 32px;
+    font font-weight: 600;
+    min-width: 280px;
+}
+.text-animation span{
+    position: relative;
+}
+.text-animation span::before{
+    content:"Eastern Weather";
+    color: var(--main-color);
+    animation: words 20s infinite;
+}
+.text-animation span::after{
+    content: "";
+    background-color: var(--bg-color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-top-left: 3px solid var(--bg-color);
+    right: -8px;
+    animation: cursor 0.6s infinite,typing 20s steps(14) infinite;
+}
+@keyframes cursor{
+    to{
+      border-left: 2px solid var(--main-color);
+    }
+}
+@keyframes words{
+    0%,
+    20%{
+       content: "Eastern Pronvice History";
+    }
+    21%,
+    40%{
+       content: "ICU PORTAL LINK";
+    }
+    41%,
+    60%{
+       content: "ZRDC PORTAL LINK" ;
+    }
+    61%,
+    80%{
+       content: "Eastern Weather Forecast";
+    }
+    81%, 
+    100%{
+        content: "Kumawa Ceremonies";
+    }
+}
+@keyframes typing{
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95%{
+       width: 0;
+    }
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85%{
+        width: calc(100% + 8px);
+    }
+  }
+
+.weatherbox li{
+    align-items: center;
+    font-size: 4rem;
+    font-size: 300;
+    padding-bottom: 50px;
+}
+.widget li a{
+    align-items: left;
+    justify-content: space-between;
+    padding-right:50px 50px;
+}
+.para1 {
+    font-size: 8rem;
+    font-size: 300;
+    padding-bottom: 50px;
+}
+
+.heading {
+    font-size: 8rem;
+    text-align: center;
+    margin: 5rem 0;
+}
+.District {
+    padding: 100px 15px;
+    background: var(--second-bg-color);
+}
+.District h2{
+    margin-bottom: 5rem; 
+}
+.History-items{  
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap:wrap;
+    position: relative;
+}
+.History-items::before{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: var(--main-color);
+    left: calc(50% - 1px);
+}
+.History-items{
+    margin-bottom: 40%;
+    width: 100%;
+    position: relative;
+}
+.History-items:last-child{
+    margin-bottom: 0;
+}
+.History-items:nth-child(odd){
+    padding-right: calc(50% + 30px);
+    text-align: right;
+}
+.History-items:nth-child(even){
+    padding-letf: calc(50% + 30px);
+}
+.History-dot{
+    height: 21px;
+    width: 21px;
+    background-color: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color);
+    position: absolute;
+    left: calc(50% - 8px);
+    border-radius: 50%;
+    top: 10px;
+}
+.History-date{
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    margin: 6px 0 15px;
+}
+.History-content{
+    background-color: var(--bg-color);
+    border: 3px solid var(--main-color);
+    padding: 30px 50px;
+    border-radius: 4rem;
+    box-shadow:0 0 10px var(--main-color) ;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.History-content:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--main-color);
+}
+.History-content h3{
+    font-size: 7rem;
+    color: white;
+    margin: 0 0 10px;
+    font-weight: 500;
+}
+.History-content p{
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 22px;
+}
+.History-content .btn{
+    margin: 3rem 0;
+    text-align: center;
+}
+.heading{
+    text-align: center;
+    font-size: 7rem;
+    margin: 5rem 0;
+}
+.About{
+    background-color: var(--bg-color);
+    color: black;
+}
+.About h2{
+    color: var(--text-color);
+}
+.icu-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
+    gap: 2.5rem;
+}
+.icu-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    height: 1000px;
+    border-radius: 3rem;
+    cursor: pointer;
+    border: 5px transparent;
+    transition: 0.4 ease-in-out;
+}
+.icu-box:hover{
+    background-color: var(--second-bg-color);
+    color: var(--main-color);
+    border: 5px solid var(--main-color);
+    transform: scale(1.03);
+}
+.icu-info{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+}
+.icu-info h4{
+    font-size: 4rem;
+    margin: 2rem 0;
+    font-weight: 800;
+}
+.icu-info h1{
+    font-size: 2rem;
+    margin: 2rem 0;
+    font-weight: 800;
+}
+.icu-info p{
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.7;
+}
+.contact{
+    background-color: var(--second-bg-color);
+}
+.contact h2{
+    margin-bottom: 3rem;
+    color:var(--text-color);
+}
+
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin: 5rem 0;
+    text-align: center;
+}
+.input-group input,
+.input-group-2 textarea{
+    width: 100%;
+    padding: 2.5%;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border-radius: 2rem;
+    border: 2px solid var(--main-color);
+    margin: 1.5rem;
+}
+.footer{
+    background-color: var(--bg-color);
+    padding: 50px 0;
+}
+.footer .weather-container-icons{
+    text-align: center;
+    font-size: 3rem;
+}
+.footer ul{
+    text-align: center;
+    font-size: 2rem;
+}
+.footer ul li{
+    display: inline-block;
+    margin-left: 20px;  
+}
+.footer ul li a{
+    color: white;
+    border-bottom: 3px solid transparent;
+    transition: 0.3 ease-in-out;
+}
+.footer ul li a:hover{
+    border-bottom: 3px solid var(--main-color); 
+}
+.footer .copyright {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 20px;
+
+}
+@media(max-width:1024px){
+    #menu-icon{
+        display: block;
+    }
+.home-content{
+    position: absolute;
+    top:10%;
+    left: 0;
+    width: 100%;
+    padding:1rem 3rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-left: :2px solid var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+    border-bottomileft-radiud:2rem;
+}
+.home-img{
+        top: 100%;
+}
+.navbar{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 50%;
+    padding:1rem 3rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-left: :2px solid var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+    border-bottomileft-radiud:2rem;
+    }
+.navbar a{
+    display: block;
+    margin: 3rek 0;
+    font-size: 2rem;
+    color: var(--text-color);
+   }
+}
+/*RESPONSE DESIGN*/
